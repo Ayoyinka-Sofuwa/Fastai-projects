@@ -10,5 +10,9 @@ The data used here are images of cars extracted from the duckduckgo search engin
 * Insert image
 
 ### Key Steps
+#### Process
 
-and it contains pictures of different car types that fall in the "SUV", "Sedan" categories
+##### Gathering Data
+The data used for this experiment was downloaded from the duckduckgo search engine and it contains pictures of different car types that fall in the "SUV", "Sedan" categories. I first downloaded two images, one in each of the categories and then saved that in a folder, then I downloaded all the images in those categories and saved them in another folder. We thus have two holdout datasets:
+- Validation data
+- Initially Downloaded data
