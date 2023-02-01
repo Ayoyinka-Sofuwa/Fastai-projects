@@ -10,7 +10,7 @@ The data used here are images of cars extracted from the duckduckgo search engin
 * Insert image
 
 ## Key Steps
-### Process
+### Process and Experiment
 
 #### Gathering Data
 The data used for this experiment was downloaded from the duckduckgo search engine and it contains pictures of different car types that fall in the "SUV", "Sedan" categories. I first downloaded two images, one in each of the categories and then saved that in a folder, then I downloaded all the images in those categories and saved them in another folder. We thus have two holdout datasets:
@@ -19,6 +19,7 @@ The data used for this experiment was downloaded from the duckduckgo search engi
 Then remove/unlink the images which failed during download
 
 #### Preprocess the data and Train the model
+##### Preprocessing
 The fastai DataBlock is an important concept that provides a flexible and modular way to pre-process and manage datasets in machine learning.
 The DataBlock API automates the entire data pipeline, from loading to pre-processing to batching and shuffling, reducing the amount of code you need to write and improving code quality and readability.
 Here, we are working on a classification computer vision project so we'll work with the ImageBlock and CategoryBlock. Then we view our data with the dataloaders method and then resize to fit how we want to view the data. 
@@ -28,3 +29,6 @@ The different data resizing methods explored here:
 * RandomResizedCrop
 * Squish.
 Another data transformation method to view our data in other ways in realtime is the data augumentation method. It reshapes our data in real time and can be useful for training out model to view and be exposed to different aspects of our data.
+
+##### Training the model
+Here we pass our augumented and/or resized data to our learner, this time(vision_learner). Using a pretrained model, ResNet34 and defining our metric as the error rate, we finetune the model and run it over 5 - 6 epochs.
