@@ -33,8 +33,30 @@ Another data transformation method to view our data in other ways in realtime is
 ##### Training the model
 Here we pass our augumented and/or resized data to our learner, this time(vision_learner). Using a pretrained model, ResNet34 and defining our metric as the error rate, we finetune the model and run it over 5 - 6 epochs. We note the losses and eroor rate progression, then we visualize the top losses
 
-* add top_losses image
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Fastai-projects/blob/main/Tests/car_classifiers/top_losses.png">
+ </p>
 
 Then we clean the data using the ImageClassifierCleaner which is a vision widget that helps to reclassify, delete false data.
 
-You can retrain your model on the reclassified and relabelled data 
+You can retrain your model on the reclassified and relabelled data.
+Run through the experiments again and save and export model (pkl file). Test model on new data, deploy to gradio to view data and test predictions that the model will make.
+
+Experiment result and future work
+In this experiment, the model performed poorly on the validation set, the loss was really high, prediction was poor and it wasn't making any accurate prediction. So I had a couple of iterations after visualizing the prediction performance on a confusion matrix and performance significantly improved.
+
+Issues observed:
+* Bias towards SUVs due to imbalanced data
+* Check labelled data and reclassify misclassified data
+
+## Setting up Gradio
+* Open up hugging spaces
+* Create a new space selecting gradio SDK, follow instructions to run the gradio space:
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Fastai-projects/blob/main/Tests/car_classifiers/Hugging face space.png">
+ </p>
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Fastai-projects/blob/main/Tests/car_classifiers/gradio_app.png">
+ </p>
