@@ -32,7 +32,6 @@ Another data transformation method to view our data in other ways in realtime is
 
 ##### Training the model
 Here we pass our augumented and/or resized data to our learner, this time(vision_learner). Using a pretrained model, ResNet34 and defining our metric as the error rate, we finetune the model and run it over 5 - 6 epochs. We note the losses and eroor rate progression, then we visualize the top losses
-
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Fastai-projects/blob/main/Tests/car_classifiers/top_losses.png">
  </p>
